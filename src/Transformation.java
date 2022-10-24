@@ -1,17 +1,24 @@
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Random;
 
 public class Transformation {
     Map<String, List<Integer>> plenty;
     List<Integer> list;
 
-    private void random() {
-
+    Random random = new Random();
+    private void randoms() {
+        int one = random.nextInt(1000);
+        int two = random.nextInt(1000);
+        int three = random.nextInt(1000);
+        list.add(one);
+        list.add(two);
+        list.add(three);
     }
 
-    public Transformation(String plenty, ) {
-        this.plenty = plenty;
+    public Transformation(String plenty) {
+        this.plenty.put(plenty, list);
     }
 
     @Override
