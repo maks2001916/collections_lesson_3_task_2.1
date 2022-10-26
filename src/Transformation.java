@@ -6,28 +6,40 @@ public class Transformation {
     private String key;
     private int sum;
     Random random = new Random();
+    int sum1 = 0;
+    List<Integer> list1 = new ArrayList<>();
+    int variableOne = 0;
+    int variableTwo = 0;
+    int variableThree = 0;
     private void randoms() {
+
         int one = random.nextInt(1000);
         int two = random.nextInt(1000);
         int three = random.nextInt(1000);
-        list.add(one);
-        list.add(two);
-        list.add(three);
+        list1.add(one);
+        list1.add(two);
+        list1.add(three);
+        variableOne = one;
+        variableTwo = two;
+        variableThree = three;
+
     }
 
     public Transformation(String plenty) {
         Map<String, List<Integer>> plentyFinis = new HashMap<>();
-        plentyFinis.put(plenty, list);
+        plentyFinis.put(plenty, list1);
         key = plenty;
     }
 
     private void calculatingTheAmount() {
-        sum = list.get(0) + list.get(1) + list.get(2);
+        sum1 = variableOne + variableTwo + variableThree;
     }
 
     public void lineUp() {
+        randoms();
+        calculatingTheAmount();
         Map<String, Integer> lineUp = new HashMap<>();
-        lineUp.put(key, sum);
+        lineUp.put(key, sum1);
         System.out.println(lineUp);
     }
 
