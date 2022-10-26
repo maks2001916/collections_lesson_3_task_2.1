@@ -4,7 +4,7 @@ public class Transformation {
     Map<String, List<Integer>> plenty;
     List<Integer> list;
     private String key;
-    int sum;
+    private int sum;
     Random random = new Random();
     private void randoms() {
         int one = random.nextInt(1000);
@@ -16,7 +16,8 @@ public class Transformation {
     }
 
     public Transformation(String plenty) {
-        this.plenty.put(plenty, list);
+        Map<String, List<Integer>> plentyFinis = new HashMap<>();
+        plentyFinis.put(plenty, list);
         key = plenty;
     }
 
@@ -27,6 +28,7 @@ public class Transformation {
     public void lineUp() {
         Map<String, Integer> lineUp = new HashMap<>();
         lineUp.put(key, sum);
+        System.out.println(lineUp);
     }
 
     @Override
